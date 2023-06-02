@@ -1,11 +1,14 @@
-﻿internal class Program
+﻿using System.Globalization;
+//NumberStyles.Float para poder utilizar notacion cientifica
+//CultureInfo.InvariantCulture para poder ingresar decimales con el '.' ej:3.5 sino hay que ingresar 3,5.
+
+internal class Program
 {
     const int indefinido = -9999;
     private static void Main(string[] args)
     {
-        int flag = 1;
-        int a,b,Operacion;
-        int ResultadoOperacion;
+        int flag = 1, Operacion;
+        float a,b, ResultadoOperacion;
 
         while(flag == 1){
 
@@ -19,11 +22,11 @@
                 {
                     Console.WriteLine("Ingrese el primer numero");
                     var NumA = Console.ReadLine();
-                    bool resultadoA = int.TryParse(NumA, out a);
+                    bool resultadoA = float.TryParse(NumA, NumberStyles.Float, CultureInfo.InvariantCulture ,out a);
 
                     Console.WriteLine("Ingrese el segundo numero");
                     var NumB = Console.ReadLine();
-                    bool resultadoB = int.TryParse(NumB, out b);
+                    bool resultadoB = float.TryParse(NumB,NumberStyles.Float, CultureInfo.InvariantCulture, out b);
 
                     if (resultadoA && resultadoB)
                     {
@@ -63,7 +66,7 @@
         }
     }
     
-    static int Calculadora(int a, int b, int CodigoOperacion){
+    static float Calculadora(float a, float b, int CodigoOperacion){
         switch (CodigoOperacion)
         {
             case 1:
