@@ -25,6 +25,7 @@
         Console.WriteLine("Cadenas concatenadas:"+cadena3);
 
         Console.WriteLine("Subcadena de cadena1:" + cadena1.Substring(0,10));
+        //substring me da una sub cadena indicando los indices como intervalo
 
         Console.WriteLine("Recorrido en ciclo foreach:");
         foreach (var caracter in cadena1)
@@ -57,11 +58,13 @@
         Console.WriteLine("cadena en minusculas:"+cadena1);
         
         string[] cadena4 = cadena1.Split(' ');
+        /*split devuelve las palabras en forma individuales
+        si cadena1 = hola como estas?, split seára cadena1 en tres cadenas 
+        individuales: hola , como , estas?, por eso las guardo en un arreglo.*/
+
         foreach (string subCadena in cadena4)
         {
             Console.WriteLine(subCadena);
         }
-
-
     }
 }
