@@ -10,6 +10,29 @@ internal class Program
         int flag = 1, Operacion;
         float a,b, ResultadoOperacion;
 
+        Console.WriteLine("Ingrese el primer numero");
+        var NumA = Console.ReadLine();
+        bool resultadoA = float.TryParse(NumA, NumberStyles.Float, CultureInfo.InvariantCulture ,out a);
+
+        if (resultadoA)
+        {
+            Console.WriteLine("Valor absoluto:"+Math.Abs(a));
+            Console.WriteLine("Cuadrado:"+ Math.Pow(a,2));
+            Console.WriteLine("raiz cuadrada:"+ Math.Sqrt(a));
+            Console.WriteLine("sen():"+ Math.Sin(a));
+            Console.WriteLine("cos():"+ Math.Cos(a));
+            Console.WriteLine("Parte entera:"+ Math.Floor(a));
+        }
+
+        Console.WriteLine("Ingrese dos numeros a comparar:");
+        Console.WriteLine("Ingrese el primer numero");
+            NumA = Console.ReadLine();
+            resultadoA = float.TryParse(NumA, NumberStyles.Float, CultureInfo.InvariantCulture ,out a);
+        Console.WriteLine("Ingrese el segundo numero");
+        var NumB = Console.ReadLine();
+        bool resultadoB = float.TryParse(NumB,NumberStyles.Float, CultureInfo.InvariantCulture, out b);
+
+
         while(flag == 1){
 
             Console.WriteLine("Ingrese la operacion que desea realizar:\n-1:suma\n-2:resta\n-3:Producto\n-4:Cociente\n-5:Salir");
@@ -21,12 +44,12 @@ internal class Program
                 if (Operacion!=5)
                 {
                     Console.WriteLine("Ingrese el primer numero");
-                    var NumA = Console.ReadLine();
-                    bool resultadoA = float.TryParse(NumA, NumberStyles.Float, CultureInfo.InvariantCulture ,out a);
+                    NumA = Console.ReadLine();
+                    resultadoA = float.TryParse(NumA, NumberStyles.Float, CultureInfo.InvariantCulture ,out a);
 
                     Console.WriteLine("Ingrese el segundo numero");
-                    var NumB = Console.ReadLine();
-                    bool resultadoB = float.TryParse(NumB,NumberStyles.Float, CultureInfo.InvariantCulture, out b);
+                    NumB = Console.ReadLine();
+                    resultadoB = float.TryParse(NumB,NumberStyles.Float, CultureInfo.InvariantCulture, out b);
 
                     if (resultadoA && resultadoB)
                     {
