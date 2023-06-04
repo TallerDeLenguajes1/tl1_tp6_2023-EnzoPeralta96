@@ -32,6 +32,10 @@ internal class Program
         var NumB = Console.ReadLine();
         bool resultadoB = float.TryParse(NumB,NumberStyles.Float, CultureInfo.InvariantCulture, out b);
 
+        if (resultadoA && resultadoB)
+        {
+            Console.WriteLine("maximo:"+Math.Max(a,b)+ " "+ "minimo:"+Math.Min(a,b));
+        }
 
         while(flag == 1){
 
